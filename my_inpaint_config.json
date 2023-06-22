@@ -1,4 +1,8 @@
 {
+	"team_data":
+	{
+		"name": "RasMouse"
+	},
     "training_parms": {
             "dummy_value": 1000
     },

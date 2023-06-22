@@ -50,7 +50,7 @@ def inpaint_validation_set(settings):
         io.imsave(out_image_name, inpainted_image)
 
 if __name__ == '__main__':
-    args = argparse.ArgumentParser(description='InpaintTrainingSet')
+    args = argparse.ArgumentParser(description='InpaintValidationSet')
     config = InPaintConfig(args)
     if config.settings is not None:
         inpaint_validation_set(config.settings)
