@@ -44,4 +44,3 @@ if __name__ == '__main__':
     if config.settings is not None:
         submit_inpainting(config.settings)
         # upload_to_challenge_server()
-        
