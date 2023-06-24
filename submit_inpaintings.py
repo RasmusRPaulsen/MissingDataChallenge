@@ -1,13 +1,7 @@
 import argparse
-from skimage import io
 import os
 import pathlib
-import numpy as np
 from inpaint_config import InPaintConfig
-from inpaint_tools import read_file_list
-from skimage.metrics import structural_similarity
-from skimage.metrics import mean_squared_error
-from skimage.metrics import peak_signal_noise_ratio
 from datetime import datetime
 import shutil
 
