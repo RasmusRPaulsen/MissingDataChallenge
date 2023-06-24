@@ -9,10 +9,5 @@
     "dirs": {
             "input_data_dir": "C:/data/Cats/missing_data_challenge/",
 			"output_data_dir": "C:/data/Cats/missing_data_output/"
-	},
-	"sets": {
-			"training_images": "training.txt",
-			"validation_files": "validation_200.txt",
-			"testing_files": "testing_200.txt"
 	}
 }
