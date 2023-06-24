@@ -6,9 +6,13 @@ class InPaintConfig:
         self.settings = None
         args.add_argument('-c', '--config', default=None, type=str,
                           help='JSON config file (default: None)')
+        args.add_argument('-d', '--data', default="training", type=str,
+                          help='Data set to use (default: training)')
         args = args.parse_args()
         if hasattr(args, 'config') and args.config is not None:
             self.load_settings(args.config)
+            if self.settings is not None:
+                self.settings["data_set"] = args.data
         else:
             print("Configuration file need to be specified. Add '-c config.json', for example.")
 

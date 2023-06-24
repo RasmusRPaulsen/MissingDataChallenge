@@ -23,8 +23,9 @@ def inpaint_validation_set(settings):
     input_data_dir = settings["dirs"]["input_data_dir"]
     output_data_dir = settings["dirs"]["output_data_dir"]
     data_set = settings["sets"]["validation_files"]
+    set_clean = os.path.splitext(data_set)[0]
 
-    inpainted_result_dir = os.path.join(output_data_dir, "inpainted_validation")
+    inpainted_result_dir = os.path.join(output_data_dir, f"inpainted_{set_clean}")
     pathlib.Path(inpainted_result_dir).mkdir(parents=True, exist_ok=True)
 
     avg_img_name = os.path.join(output_data_dir, "average_image.png")
@@ -44,9 +45,7 @@ def inpaint_validation_set(settings):
 
         im_masked = io.imread(in_image_name)
         im_mask = io.imread(in_mask_name)
-
         inpainted_image = inpaint_one_image(im_masked, im_mask, avg_img)
-
         io.imsave(out_image_name, inpainted_image)
 
 if __name__ == '__main__':

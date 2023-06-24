@@ -11,13 +11,13 @@ def train_in_painter(settings):
     """
     Computes an average image based on all images in the training set.
     """
-    print("Training inpainter")
-
     input_data_dir = settings["dirs"]["input_data_dir"]
     output_data_dir = settings["dirs"]["output_data_dir"]
-    training_set = settings["sets"]["training_images"]
+    training_set = settings["data_set"] + ".txt"
+    output_dir = os.path.join(output_data_dir, "trained_model")
+    pathlib.Path(output_dir).mkdir(parents=True, exist_ok=True)
 
-    pathlib.Path(output_data_dir).mkdir(parents=True, exist_ok=True)
+    print(f'Training inpainter with data set: {training_set} and placing model in {output_dir}')
 
     file_list = os.path.join(input_data_dir, "data_splits", training_set)
     file_ids = read_file_list(file_list)
@@ -39,7 +39,7 @@ def train_in_painter(settings):
 
     n_images = len(file_ids)
     avg_img = np.divide(sum_image, n_images)
-    avg_img_name = os.path.join(output_data_dir, "average_image.png")
+    avg_img_name = os.path.join(output_dir, "average_image.png")
     io.imsave(avg_img_name, avg_img)
 
 

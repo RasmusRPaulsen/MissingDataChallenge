@@ -2,12 +2,12 @@ import argparse
 from skimage import io
 import os
 import pathlib
-import numpy as np
 from inpaint_config import InPaintConfig
 from inpaint_tools import read_file_list
 from skimage.metrics import structural_similarity
 from skimage.metrics import mean_squared_error
 from skimage.metrics import peak_signal_noise_ratio
+from tqdm import tqdm
 
 
 def compute_inpaint_metrics(org_img, inpainted_img):
@@ -18,28 +18,27 @@ def compute_inpaint_metrics(org_img, inpainted_img):
     return {"mse": mse_val, "ssim": ssim, "psnr": psnr}
 
 
-def evaluate_validation_set(settings):
-    print("Evaluating a validation set")
-
+def evaluate_inpainting(settings):
     input_data_dir = settings["dirs"]["input_data_dir"]
     output_data_dir = settings["dirs"]["output_data_dir"]
-    data_set = settings["sets"]["validation_files"]
-    inpainted_result_dir = os.path.join(output_data_dir, "inpainted_validation")
+    data_set = settings["data_set"]
+    inpainted_result_dir = os.path.join(output_data_dir, f"inpainted_{data_set}")
+
     result_dir = os.path.join(output_data_dir, "evaluations")
     pathlib.Path(result_dir).mkdir(parents=True, exist_ok=True)
+    evaluation_file = os.path.join(result_dir, f"{data_set}_results.csv")
 
-    evaluation_file = os.path.join(result_dir, "validation_results.csv")
+    print(f"Evaluating {data_set} and placing evaluations in {evaluation_file}")
 
-    file_list = os.path.join(input_data_dir, "data_splits", data_set)
+    file_list = os.path.join(input_data_dir, "data_splits", data_set + ".txt")
     file_ids = read_file_list(file_list)
     if file_ids is None:
         return
 
     f = open(evaluation_file, 'w')
-
     print(f"Evaluating {len(file_ids)} images")
 
-    for idx in file_ids:
+    for idx in tqdm(file_ids):
         org_image_name = os.path.join(input_data_dir, "all_cats_aligned", f"{idx}_preprocessed.jpg")
         inpainted_image_name = os.path.join(inpainted_result_dir, f"{idx}.png")
 
@@ -47,12 +46,12 @@ def evaluate_validation_set(settings):
         im_inpainted = io.imread(inpainted_image_name)
 
         metrics = compute_inpaint_metrics(im_org, im_inpainted)
-        print(f'MSE: {metrics["mse"]} SSIM: {metrics["ssim"]} PSNR: {metrics["psnr"]}')
+        # print(f'MSE: {metrics["mse"]} SSIM: {metrics["ssim"]} PSNR: {metrics["psnr"]}')
         f.write(f'{idx}, {metrics["mse"]}, {metrics["ssim"]}, {metrics["psnr"]}\n')
 
 
 if __name__ == '__main__':
-    args = argparse.ArgumentParser(description='EvaluateValidationSet')
+    args = argparse.ArgumentParser(description='EvaluateInPaintings')
     config = InPaintConfig(args)
     if config.settings is not None:
-        evaluate_validation_set(config.settings)
+        evaluate_inpainting(config.settings)

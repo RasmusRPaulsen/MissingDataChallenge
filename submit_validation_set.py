@@ -18,11 +18,11 @@ def submit_validation_set(settings):
     input_data_dir = settings["dirs"]["input_data_dir"]
     output_data_dir = settings["dirs"]["output_data_dir"]
     data_set = settings["sets"]["validation_files"]
+    set_clean = os.path.splitext(data_set)[0]
     team_name = settings["team_data"]["name"]
-    inpainted_result_dir = os.path.join(output_data_dir, "inpainted_validation")
+    inpainted_result_dir = os.path.join(output_data_dir, f"inpainted_{set_clean}")
     submission_dir = os.path.join(output_data_dir, "submissions")
     pathlib.Path(submission_dir).mkdir(parents=True, exist_ok=True)
-    set_clean = os.path.splitext(data_set)[0]
 
     timestamp = datetime.now().strftime(r'%d%m%y_%H%M%S')
     submission_file = os.path.join(submission_dir, f"{team_name}-{set_clean}-{timestamp}")
