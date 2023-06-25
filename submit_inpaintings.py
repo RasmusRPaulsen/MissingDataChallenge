@@ -27,4 +27,4 @@ if __name__ == '__main__':
     config = InPaintConfig(args)
     if config.settings is not None:
         submit_inpainting(config.settings)
-  
+
