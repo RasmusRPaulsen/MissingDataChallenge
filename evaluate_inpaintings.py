@@ -39,7 +39,7 @@ def evaluate_inpainting(settings):
     print(f"Evaluating {len(file_ids)} images")
 
     for idx in tqdm(file_ids):
-        org_image_name = os.path.join(input_data_dir, "all_cats_aligned", f"{idx}_preprocessed.jpg")
+        org_image_name = os.path.join(input_data_dir, "originals", f"{idx}.jpg")
         inpainted_image_name = os.path.join(inpainted_result_dir, f"{idx}.png")
 
         im_org = io.imread(org_image_name)

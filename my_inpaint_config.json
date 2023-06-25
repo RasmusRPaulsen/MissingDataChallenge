@@ -7,7 +7,7 @@
             "dummy_value": 1000
     },
     "dirs": {
-            "input_data_dir": "C:/data/Cats/missing_data_challenge/",
+            "input_data_dir": "C:/data/Cats/MissingDataOpenData/",
 			"output_data_dir": "C:/data/Cats/missing_data_output/"
 	}
 }

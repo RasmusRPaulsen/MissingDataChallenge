@@ -39,8 +39,8 @@ def inpaint_images(settings):
     print(f"Inpainting {len(file_ids)} images")
 
     for idx in tqdm(file_ids):
-        in_image_name = os.path.join(input_data_dir, "all_cats_masked", f"{idx}_preprocessed_stroke_masked.png")
-        in_mask_name = os.path.join(input_data_dir, "all_cats_masked", f"{idx}_preprocessed_stroke_mask.png")
+        in_image_name = os.path.join(input_data_dir, "masked", f"{idx}_stroke_masked.png")
+        in_mask_name = os.path.join(input_data_dir, "masks", f"{idx}_stroke_mask.png")
         out_image_name = os.path.join(inpainted_result_dir, f"{idx}.png")
 
         im_masked = io.imread(in_image_name)

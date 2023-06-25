@@ -28,7 +28,7 @@ def train_in_painter(settings):
 
     sum_image = None
     for idx in file_ids:
-        in_image_name = os.path.join(input_data_dir, "all_cats_aligned", f"{idx}_preprocessed.jpg")
+        in_image_name = os.path.join(input_data_dir, "originals", f"{idx}.jpg")
 
         im_org = io.imread(in_image_name)
         im_shape = im_org.shape
