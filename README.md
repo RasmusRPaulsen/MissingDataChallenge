@@ -10,7 +10,7 @@ In the example below, there is an **original** image that has been *masked* with
 
 ## Data
 
-The data consist of aligned cat faces stored as RGB images of size 360 x 360 pixels. The data can be downloaded here: TBD.
+The data consist of aligned cat faces stored as RGB images of size 360 x 360 pixels. The data can be downloaded [here](https://people.compute.dtu.dk/rapa/cats/MissingDataOpenData.zip).
 
 The folder structure:
 - **originals** : The original images (only for the training set)
@@ -42,7 +42,7 @@ The following scripts, should be seen as simple templates that you can use as a 
 
 ## Getting started
 
-- Download the data and unpack it a suitable place.
+- Download the data [here](https://people.compute.dtu.dk/rapa/cats/MissingDataOpenData.zip) and unpack it a suitable place.
 - Clone this repository or download it as a zip and unpack.
 - Create a copy of `my_inpaint_config.json` or edit it directly.
 - Find a fantastic team name (only using letters and numbers) and put it into the config file.
