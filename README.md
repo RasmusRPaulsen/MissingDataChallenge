@@ -1,4 +1,4 @@
-# Missing Data Challenge - with cats 2023
+# Missing Data Challenge - Paint the Cat!
 
 The goal of this challenge is to develop and evaluate algorithms for image inpainting. In this challenge, inpainting is the process of filling in missing parts of an image, where we already know which part that needs to be filled.
 
