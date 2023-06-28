@@ -40,6 +40,7 @@ def train_in_painter(settings):
     n_images = len(file_ids)
     avg_img = np.divide(sum_image, n_images)
     avg_img_name = os.path.join(output_dir, "average_image.png")
+    avg_img = avg_img.astype(np.uint8)
     io.imsave(avg_img_name, avg_img)
 
 

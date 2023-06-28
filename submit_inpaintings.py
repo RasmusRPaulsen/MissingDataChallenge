@@ -4,7 +4,6 @@ import pathlib
 from inpaint_config import InPaintConfig
 from datetime import datetime
 import shutil
-import requests
 
 
 def submit_inpainting(settings):

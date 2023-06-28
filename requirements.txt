@@ -1,0 +1,16 @@
+certifi==2023.5.7
+charset-normalizer==3.1.0
+idna==3.4
+imageio==2.31.1
+lazy_loader==0.2
+networkx==3.1
+numpy==1.25.0
+packaging==23.1
+Pillow==9.5.0
+PyWavelets==1.4.1
+requests==2.31.0
+scikit-image==0.21.0
+scipy==1.11.0
+tifffile==2023.4.12
+tqdm==4.65.0
+urllib3==2.0.3
