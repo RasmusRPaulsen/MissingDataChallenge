@@ -23,6 +23,12 @@ The data has been divided into several sets:
 - **validation** : Images with only the masked image available. Will be used during the challenge to evaluate challenge teams on the score board.
 - **test** : Images with only the masked image avalaible. Will be evaluated once and be used for the final team score.
 
+## Dependencies
+The code is tested with python 3.11.3 and requires installation of the following packages scikit-image, tqdm and requests. You can install the dependencies using pip:
+```
+pip install -r requirements.txt
+```
+
 ## Supplied Python scripts
 
 All the supplied scripts take two arguments, the config file and the dataset to use. For example:
