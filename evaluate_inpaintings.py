@@ -38,6 +38,7 @@ def evaluate_inpainting(settings):
     f = open(evaluation_file, 'w')
     print(f"Evaluating {len(file_ids)} images")
 
+    f.write('id, mse, ssim, psnr\n')
     for idx in tqdm(file_ids):
         org_image_name = os.path.join(input_data_dir, "originals", f"{idx}.jpg")
         inpainted_image_name = os.path.join(inpainted_result_dir, f"{idx}.png")

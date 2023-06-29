@@ -4,10 +4,14 @@
 		"name": "RasMouse"
 	},
     "training_parms": {
-            "dummy_value": 1000
+		"method": "MeanImageInpaint",
+		"dummy_value": 1000
     },
     "dirs": {
             "input_data_dir": "C:/data/Cats/MissingDataOpenData/",
 			"output_data_dir": "C:/data/Cats/missing_data_output/"
+	},
+	"challenge_server": {
+		"address": "localhost:8080"
 	}
 }
