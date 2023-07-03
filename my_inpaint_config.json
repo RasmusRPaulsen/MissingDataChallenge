@@ -12,6 +12,6 @@
 			"output_data_dir": "C:/data/Cats/missing_data_output/"
 	},
 	"challenge_server": {
-		"address": "localhost:8080"
+		"address": "http://fungi.compute.dtu.dk:8080"
 	}
 }
