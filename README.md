@@ -27,7 +27,7 @@ The data has been divided into several sets:
 For the validation, test and final_test sets there are several subsets. **validation_200** contains, for example, 200 images. All the image in **validation_200** are also in **validation_500** and so on.
 
 ## Dependencies
-The code is tested with python 3.11.3 and requires installation of the following packages scikit-image, tqdm and requests. You can install the dependencies using pip:
+The code is tested with python 3.8.10 and 3.11.3 and requires installation of the following packages scikit-image, tqdm and requests. You can install the dependencies using pip:
 ```
 pip install -r requirements.txt
 ```
