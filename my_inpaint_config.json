@@ -1,10 +1,10 @@
 {
 	"team_data":
 	{
-		"name": "RasMouse"
+		"name": "YourTeamNameHere"
 	},
     "training_parms": {
-		"method": "MeanImageInpaint",
+		"method": "YourMethodHere",
 		"dummy_value": 1000
     },
     "dirs": {
