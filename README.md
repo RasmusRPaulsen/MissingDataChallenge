@@ -100,10 +100,16 @@ Inpainting has a long history and there are many ways to approach it. Here are s
 - Inpaint by finding the most similar image in the training set based on the non-masked pixels. Copy the pixels from the similar image to the masked part.
 - Build a [generative model using principal component analysis PCA](https://github.com/RasmusRPaulsen/DTUImageAnalysis/tree/main/exercises/ex8-CatsCatsCats) and fit the model to the visible pixels and by then predicting the masked pixels.
 - [Inpaint masked points in image with biharmonic equations](https://scikit-image.org/docs/stable/api/skimage.restoration.html#skimage.restoration.inpaint_biharmonic)
+- [Inpaint using the fast marching method](https://github.com/olvb/pyheal)
+- [Inpaint using the Navier-Stokes equations](https://docs.opencv.org/3.4/df/d3d/tutorial_py_inpainting.html)
 - Using [auto encoders](https://towardsdatascience.com/inpainting-with-ai-get-back-your-images-pytorch-a68f689128e5), [more auto encoders](https://wandb.ai/ayush-thakur/image-impainting/reports/An-Introduction-to-Image-Inpainting-Using-Deep-Learning--Vmlldzo3NDU0Nw)
+
+
+*Please do try at least one non-deep learning based method before going to deep learning based methods.*
 
 ## Bad Cats!
 If you find images that do not contain a cat face or where the cat face is partial or distorted, then report it to Rasmus.
 
-# References
+# Similar competitions
 - https://github.com/affromero/NTIRE22_Inpainting
+
