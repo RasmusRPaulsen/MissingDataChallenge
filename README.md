@@ -1,6 +1,6 @@
 # Missing Data Challenge - Paint the Cat!
 
-This challenge is made in conjunction with the [Ph. D. summer school on missing data](https://missing-data.compute.dtu.dk/).
+This challenge is made in conjunction with the [Ph. D. summer school on missing data](https://missing-data.compute.dtu.dk/). The Ph. D. summer school specific information can be found [here](info/InPaint-the-cat-challenge-2023.pdf).
 
 The goal of this challenge is to develop and evaluate algorithms for image inpainting. In this challenge, inpainting is the process of filling in missing parts of an image, where we already know which part that needs to be filled.
 
